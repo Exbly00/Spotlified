@@ -1,0 +1,107 @@
+html, body {
+    height: 100%;
+  }
+  
+  body {
+    /* body est un container flex en column */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+  }
+
+main {
+    /* contrairement aux autres enfants (header, footer), prendre tout l'espace restant */
+    flex-grow: 1;
+  
+    padding: 50px 30px;
+    overflow-y: auto; /* permet de scroller au sein du main et non sur toute la page */
+  
+    /********************************************************************************/
+    /* sections */
+
+    section {
+      /* chaque section est un container flex en column */
+      flex-direction: column;
+  
+      display: none;
+      margin: auto;
+      max-width: 1200px; /* max-width pour les gros écrans... éviter d'avoir une liste de 12'000px de large */
+  
+      &.active { /* avec la classe "active", on affiche la section */
+        display: flex;
+      }
+  
+      &#player-section {
+        height: 100%;
+        padding: 0;
+        /* cas special, le player prend tout l'espace et centre son contenu. Les autres section partent du haut */
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+
+  
+footer {
+    flex-shrink: 0; /* pas le droit de se réduire */
+  
+    height: 100px;
+    background: var(--secondary-color);
+    border-top: 1px solid var(--border-color);
+  
+    nav {
+      /* nav est de nouvau un container flex */
+      height: 100%;
+      display: flex;
+  
+      a {
+        /* chaque lien prend 1 part de l'espace restant, ils font donc tous la même taille */
+        flex-grow: 1;
+  
+        /*
+          Pour center l'icône, on refait une flex box à un seul enfant (l'icône). Le lien est donc le parent flex et l'icône
+          son unique enfant à centrer. Milles autres façons de faire ça... mais insistons sur les flexboxes :)
+          Le centering vertical en CSS peut être parfois tricky...
+  
+          Avis perso et complètement subjectif: les flexboxes servent à centrer un ou plusieurs éléments, verticalement
+          et horizontalement. Autant s'en servir, plutôt que de bricoler des top: 50%; avec des marges négatives, par exemple.
+          Il y a aussi l'option vertical-align, mais qui ne marchera que dans certains cas... (si le parent a une taille fixe)
+        */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+  
+        text-align: center;
+        text-decoration: none;
+  
+        /* tout ce qui est dans le lien du nav verra son changement de couleur animé  */
+        * {
+          transition: color var(--default-transition);
+        }
+  
+        /* affiché en bleu quand la souris passe dessus ou quand il y a la classe "active" */
+        &.active *,
+        &:hover * {
+          color: var(--primary-color);
+        }
+  
+        /* taille de l'icône */
+        .material-icons {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  
+    /* pour les petits écrans, on diminue la taille du footer et on cache le texte des icônes */
+    @media (max-width: 768px) {
+      height: 80px;
+  
+      nav a span:last-of-type {
+        display: none;
+      }
+    }
+  }
+  

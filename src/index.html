@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotlified</title>
+
+        <!-- Fonts google pour les icônes et la police par défaut -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" />
+
+    <link rel="stylesheet" href="css/index.css" />
+
+    <script src="index.js" type="module" defer></script>
+</head>
+<body>
+
+    <main>
+
+        <section id="home-section">
+            <h1 class="hero">Bienvenue</h1>
+            <h4>Playlist</h4>
+        </section>
+
+        <section id="artists-section" class="active">
+            <h4>Artistes</h4>
+    
+            <artist-list>
+              <a href="#">
+                <img src="http://placecats.com/200/300" />
+                <div class="artist-list-item-title">Kungs</div>
+              </a>
+    
+              <a href="#">
+                <img src="http://placecats.com/200/300" />
+                <div class="artist-list-item-title">Kungs</div>
+              </a>
+    
+              <a href="#">
+                <img src="http://placecats.com/200/300" />
+                <div class="artist-list-item-title">Kungs</div>
+              </a>
+            </artist-list>
+          </section>
+
+          <section id="list-section">
+            <h4>
+              Artistes > Kungs
+            </h4>
+    
+            <div class="list">
+              <div>
+                <a href="#">
+                  <div class="list-item-title">Never going home</div>
+                  <div class="list-item-actions">
+                    <button type="button" class="icon-button favorite-button ">
+                      <span class="material-icons">playlist_add</span>
+                    </button>
+                    <button type="button" class="icon-button play-button">
+                      <span class="material-icons">play_arrow</span>
+                    </button>
+                  </div>
+                </a>
+              </div>
+    
+              <div>
+                <a href="#">
+                  <div class="list-item-title">Never going home</div>
+                  <div class="list-item-actions">
+                    <button type="button" class="icon-button favorite-button ">
+                      <span class="material-icons">playlist_add</span>
+                    </button>
+                    <button type="button" class="icon-button play-button">
+                      <span class="material-icons">play_arrow</span>
+                    </button>
+                  </div>
+                </a>
+              </div>
+    
+              <div>
+                <a href="#">
+                  <div class="list-item-title">Never going home</div>
+                  <div class="list-item-actions">
+                    <button type="button" class="icon-button favorite-button ">
+                      <span class="material-icons">playlist_add</span>
+                    </button>
+                    <button type="button" class="icon-button play-button">
+                      <span class="material-icons">play_arrow</span>
+                    </button>
+                  </div>
+                </a>
+              </div>
+            </div>
+    
+          </section>
+
+
+    </main>
+
+    <footer>
+        <nav>
+          <a href="#home" class="active">
+            <span class="material-icons">home</span>
+            <span>Home</span>
+          </a>
+          <a href="#player">
+            <span class="material-icons">subscriptions</span>
+            <span>Lecteur</span>
+          </a>
+          <a href="#artists">
+            <span class="material-icons">library_music</span>
+            <span>Musique</span>
+          </a>
+          <a href="#favorites">
+            <span class="material-icons">favorite</span>
+            <span>Favoris</span>
+          </a>
+        </nav>
+      </footer>
+    
+</body>
+</html>
