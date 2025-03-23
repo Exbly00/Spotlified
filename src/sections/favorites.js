@@ -1,11 +1,11 @@
-import { loadSongs } from "../api";
+const songsList = document.querySelector("#favorites-section > .list");
 
-const songsList = document.querySelector("#artist-songs-section > .list");
+const displayFavorites = () => {
+  const favoriteSongs = Object.keys(localStorage).map((id) =>
+    JSON.parse(localStorage.getItem(id))
+  );
 
-const displayArtistSongs = async (id) => {
-  const songs = await loadSongs(id);
-
-  songs.forEach((song) => {
+  favoriteSongs.forEach((song) => {
     const songItem = document.createElement("li");
 
     const isFavorite = localStorage.getItem(song.id);
@@ -42,4 +42,4 @@ const displayArtistSongs = async (id) => {
   });
 };
 
-export { displayArtistSongs };
+export { displayFavorites };

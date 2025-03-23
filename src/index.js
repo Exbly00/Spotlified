@@ -4,6 +4,7 @@ import "./css/elements/artist-cover";
 import { displaySection } from "./helpers";
 import { displayArtists } from "./sections/artists";
 import { displayArtistSongs } from "./sections/artist-songs";
+import { displayFavorites } from "./sections/favorites";
 
 const router = () => {
   const splitHash = window.location.hash.split("-");
@@ -19,6 +20,13 @@ const router = () => {
       displaySection("#artist-songs");
       displayArtistSongs(id);
       break;
+
+    case "#favorites":
+      displaySection("#favorites");
+      displayFavorites();
+
+      break;
+
     default:
       displaySection("#home");
       break;
