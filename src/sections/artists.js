@@ -12,7 +12,7 @@ const displayArtists = async () => {
 
     artistItem.setAttribute("image_url", artist.image_url);
     artistItem.setAttribute("name", artist.name);
-    artistItem.setAttribute("href", `#artists-${artist.id}`);
+    artistItem.setAttribute("href", `#artistsongs-${artist.id}`);
 
     artistList.append(artistItem);
   });

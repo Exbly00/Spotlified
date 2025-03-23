@@ -1,9 +1,9 @@
 class ArtistCover extends HTMLElement {
-  static observedAttributes = ["image_url", "name"];
+  static observedAttributes = ["image_url", "name", "href"];
 
   render() {
     this.innerHTML = `
-      <a href="#">
+      <a href="${this.getAttribute("href")}">
         <img src="${this.getAttribute("image_url")}" />
         <div class="artist-list-item-title">${this.getAttribute("name")}</div>
       </a>
